@@ -1,0 +1,37 @@
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\adventure.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\IMG_2345.JPG
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.deps.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.runtimeconfig.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.runtimeconfig.dev.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.dll
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.pdb
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.csprojAssemblyReference.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.csproj.CoreCompileInputs.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.AssemblyInfoInputs.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.AssemblyInfo.cs
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.dll
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.pdb
+C:\Users\Migle\Documents\Downloads\Paveiksleliai\Paveiksleliai\bin\Debug\netcoreapp2.0\eye.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\IMG_2345.JPG
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.deps.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.runtimeconfig.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.runtimeconfig.dev.json
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.dll
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\Paveiksleliai_24bit.pdb
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.csprojAssemblyReference.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.csproj.CoreCompileInputs.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.AssemblyInfoInputs.cache
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.AssemblyInfo.cs
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.dll
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\obj\Debug\netcoreapp2.0\Paveiksleliai_24bit.pdb
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\eye.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\akis.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\akis_maza.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_0.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_1.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_2.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_3.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_5.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_4.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_6.jpg
+C:\Users\Migle\Documents\Downloads\Paveiksleliai - Copy\Paveiksleliai\bin\Debug\netcoreapp2.0\image_7.jpg

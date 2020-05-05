@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Paveiksleliai": {
+      "commandName": "Project",
+      "commandLineArgs": "image_7.jpg"
+    }
+  }
+}
