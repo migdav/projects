@@ -1,0 +1,2 @@
+Šis darbas yra apie jpg formatu turimą pavieksliuką, kuris yra konvertuojamas į bmp ir tuomet atliekamas jo rūšiavimas HEAP SORT metodu,
+duomenys yra išvedami į kitą bmp formato paveiksliuką
