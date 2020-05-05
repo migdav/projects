@@ -1,0 +1,25 @@
+﻿@model WebApplication3.Models.Kalbo
+
+@{
+    ViewBag.Title = "Info";
+}
+
+<h2>Informacija</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Pav)-->
+                <label for="SomekingStatus" class="control-label">Kalbos pavadinimas</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pav)
+            </dd>
+
+        </dl>
+    </div>
+<p>
+    @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+</p>

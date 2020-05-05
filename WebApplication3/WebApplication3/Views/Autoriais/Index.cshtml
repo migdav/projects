@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication3.Models.Autoriai>
+
+@{
+    ViewBag.Title = "Autoriai";
+}
+
+<h2>Autoriai</h2>
+
+<p align="right">
+    @Html.ActionLink("Naujas autorius", "Create", null, new { @class = "btn btn-primary action" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Pavarde)-->
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vardas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavarde)
+        </td>
+        <td>
+            @Html.ActionLink("Info", "Details", new { id = item.Id }, new { @class = "btn btn-default action" })
+            @Html.ActionLink("Redaguoti", "Edit", new { id = item.Id }, new { @class = "btn btn-warning action" })
+            @Html.ActionLink("Pašalinti", "Delete", new { id = item.Id }, new { @class = "btn btn-danger action" })
+        </td>
+    </tr>
+}
+
+</table>

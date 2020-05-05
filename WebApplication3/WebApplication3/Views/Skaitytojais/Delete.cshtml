@@ -1,0 +1,87 @@
+﻿@model WebApplication3.Models.Skaitytojai
+
+@{
+    ViewBag.Title = "Pašalinti";
+}
+
+<h2>Pašalinimas</h2>
+
+<h3>Ar tikrai norite ištrinti šį skaitytoją?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label for="SomekingStatus" class="control-label">Kodas</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kodas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Gimimo data</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gimimo_metai)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Tel.Nr</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoNr)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">El. paštas</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Biblioteka</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Biblioteko.Pav)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Tipas</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipai.Pav)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+        <input type="submit" value="Pašalinti" class="btn btn-info" />
+    </div>
+    }
+</div>

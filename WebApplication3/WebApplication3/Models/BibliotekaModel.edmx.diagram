@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7de478aeda5640428d37b779ca7a6927" Name="Diagram1">
+        <EntityTypeShape EntityType="Project_DBModel.AudioKnygo" Width="1.5" PointX="7.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Autoriai" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Biblioteko" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Igarsintojai" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Kalbo" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Knygo" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Miestai" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Skaitytojai" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Tipai" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Uzsakymai" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.UzsakymaiAudioKnygo" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.UzsakymaiKnygo" Width="1.5" PointX="9.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.UzsakymaiZurnalai" Width="1.5" PointX="9.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Zanrai" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Zurnalai" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="Project_DBModel.FK__AudioKnyg__Igars__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Audio__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Knygos__Autorius__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Bibliotek__Miest__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Bibli__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK_Skaitytojai_Bibliotekos" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Knygos__KalbaId__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Knygos__ZanrasId__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Knyga__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Zurnalai__Miesta__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Skaitytoj__Tipas__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Skait__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Uzsak__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Uzsak__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Uzsak__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Uzsakymai__Zurna__236943A5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

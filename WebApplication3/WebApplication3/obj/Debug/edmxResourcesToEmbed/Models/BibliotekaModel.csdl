@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AudioKnygo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Trukme" Type="Int32" Nullable="false" />
+    <Property Name="Skirsnis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Metai" Type="Int32" Nullable="false" />
+    <Property Name="IgarsintojasId" Type="Int32" />
+    <NavigationProperty Name="Igarsintojai" Relationship="Self.FK__AudioKnyg__Igars__03F0984C" FromRole="AudioKnygos" ToRole="Igarsintojai" />
+    <NavigationProperty Name="UzsakymaiAudioKnygos" Relationship="Self.FK__Uzsakymai__Audio__2739D489" FromRole="AudioKnygos" ToRole="UzsakymaiAudioKnygos" />
+  </EntityType>
+  <EntityType Name="Autoriai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vardas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pavarde" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Knygos" Relationship="Self.FK__Knygos__Autorius__7E37BEF6" FromRole="Autoriai" ToRole="Knygos" />
+  </EntityType>
+  <EntityType Name="Biblioteko">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="MiestasId" Type="Int32" />
+    <NavigationProperty Name="Miestai" Relationship="Self.FK__Bibliotek__Miest__71D1E811" FromRole="Bibliotekos" ToRole="Miestai" />
+    <NavigationProperty Name="Uzsakymais" Relationship="Self.FK__Uzsakymai__Bibli__797309D9" FromRole="Bibliotekos" ToRole="Uzsakymai" />
+    <NavigationProperty Name="Skaitytojais" Relationship="Self.FK_Skaitytojai_Bibliotekos" FromRole="Bibliotekos" ToRole="Skaitytojai" />
+  </EntityType>
+  <EntityType Name="Igarsintojai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vardas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pavarde" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AudioKnygos" Relationship="Self.FK__AudioKnyg__Igars__03F0984C" FromRole="Igarsintojai" ToRole="AudioKnygos" />
+  </EntityType>
+  <EntityType Name="Kalbo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Knygos" Relationship="Self.FK__Knygos__KalbaId__7C4F7684" FromRole="Kalbos" ToRole="Knygos" />
+  </EntityType>
+  <EntityType Name="Knygo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Leidykla" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Metai" Type="Int32" Nullable="false" />
+    <Property Name="KalbaId" Type="Int32" />
+    <Property Name="ZanrasId" Type="Int32" />
+    <Property Name="AutoriusId" Type="Int32" />
+    <NavigationProperty Name="Autoriai" Relationship="Self.FK__Knygos__Autorius__7E37BEF6" FromRole="Knygos" ToRole="Autoriai" />
+    <NavigationProperty Name="Kalbo" Relationship="Self.FK__Knygos__KalbaId__7C4F7684" FromRole="Knygos" ToRole="Kalbos" />
+    <NavigationProperty Name="Zanrai" Relationship="Self.FK__Knygos__ZanrasId__7D439ABD" FromRole="Knygos" ToRole="Zanrai" />
+    <NavigationProperty Name="UzsakymaiKnygos" Relationship="Self.FK__Uzsakymai__Knyga__160F4887" FromRole="Knygos" ToRole="UzsakymaiKnygos" />
+  </EntityType>
+  <EntityType Name="Miestai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bibliotekos" Relationship="Self.FK__Bibliotek__Miest__71D1E811" FromRole="Miestai" ToRole="Bibliotekos" />
+    <NavigationProperty Name="Zurnalais" Relationship="Self.FK__Zurnalai__Miesta__208CD6FA" FromRole="Miestai" ToRole="Zurnalai" />
+  </EntityType>
+  <EntityType Name="Skaitytojai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kodas" Type="Int32" Nullable="false" />
+    <Property Name="Vardas" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Pavarde" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Gimimo_metai" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TelefonoNr" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="TipasId" Type="Int32" />
+    <Property Name="BibliotekaId" Type="Int32" />
+    <NavigationProperty Name="Biblioteko" Relationship="Self.FK_Skaitytojai_Bibliotekos" FromRole="Skaitytojai" ToRole="Bibliotekos" />
+    <NavigationProperty Name="Tipai" Relationship="Self.FK__Skaitytoj__Tipas__75A278F5" FromRole="Skaitytojai" ToRole="Tipai" />
+    <NavigationProperty Name="Uzsakymais" Relationship="Self.FK__Uzsakymai__Skait__787EE5A0" FromRole="Skaitytojai" ToRole="Uzsakymai" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Skaitytojais" Relationship="Self.FK__Skaitytoj__Tipas__75A278F5" FromRole="Tipai" ToRole="Skaitytojai" />
+  </EntityType>
+  <EntityType Name="Uzsakymai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uzsakymo_Data" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Grazinimo_Data" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SkaitytojasId" Type="Int32" />
+    <Property Name="BibliotekaId" Type="Int32" />
+    <NavigationProperty Name="Biblioteko" Relationship="Self.FK__Uzsakymai__Bibli__797309D9" FromRole="Uzsakymai" ToRole="Bibliotekos" />
+    <NavigationProperty Name="Skaitytojai" Relationship="Self.FK__Uzsakymai__Skait__787EE5A0" FromRole="Uzsakymai" ToRole="Skaitytojai" />
+    <NavigationProperty Name="UzsakymaiKnygos" Relationship="Self.FK__Uzsakymai__Uzsak__17036CC0" FromRole="Uzsakymai" ToRole="UzsakymaiKnygos" />
+    <NavigationProperty Name="UzsakymaiZurnalais" Relationship="Self.FK__Uzsakymai__Uzsak__245D67DE" FromRole="Uzsakymai" ToRole="UzsakymaiZurnalai" />
+    <NavigationProperty Name="UzsakymaiAudioKnygos" Relationship="Self.FK__Uzsakymai__Uzsak__282DF8C2" FromRole="Uzsakymai" ToRole="UzsakymaiAudioKnygos" />
+  </EntityType>
+  <EntityType Name="UzsakymaiAudioKnygo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AudioKnygaId" Type="Int32" />
+    <Property Name="UzsakymasId" Type="Int32" />
+    <NavigationProperty Name="AudioKnygo" Relationship="Self.FK__Uzsakymai__Audio__2739D489" FromRole="UzsakymaiAudioKnygos" ToRole="AudioKnygos" />
+    <NavigationProperty Name="Uzsakymai" Relationship="Self.FK__Uzsakymai__Uzsak__282DF8C2" FromRole="UzsakymaiAudioKnygos" ToRole="Uzsakymai" />
+  </EntityType>
+  <EntityType Name="UzsakymaiKnygo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KnygaId" Type="Int32" />
+    <Property Name="UzsakymasId" Type="Int32" />
+    <NavigationProperty Name="Knygo" Relationship="Self.FK__Uzsakymai__Knyga__160F4887" FromRole="UzsakymaiKnygos" ToRole="Knygos" />
+    <NavigationProperty Name="Uzsakymai" Relationship="Self.FK__Uzsakymai__Uzsak__17036CC0" FromRole="UzsakymaiKnygos" ToRole="Uzsakymai" />
+  </EntityType>
+  <EntityType Name="UzsakymaiZurnalai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZurnalasId" Type="Int32" />
+    <Property Name="UzsakymasId" Type="Int32" />
+    <NavigationProperty Name="Uzsakymai" Relationship="Self.FK__Uzsakymai__Uzsak__245D67DE" FromRole="UzsakymaiZurnalai" ToRole="Uzsakymai" />
+    <NavigationProperty Name="Zurnalai" Relationship="Self.FK__Uzsakymai__Zurna__236943A5" FromRole="UzsakymaiZurnalai" ToRole="Zurnalai" />
+  </EntityType>
+  <EntityType Name="Zanrai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Knygos" Relationship="Self.FK__Knygos__ZanrasId__7D439ABD" FromRole="Zanrai" ToRole="Knygos" />
+  </EntityType>
+  <EntityType Name="Zurnalai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pav" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Nr" Type="Int32" Nullable="false" />
+    <Property Name="Metai" Type="Int32" Nullable="false" />
+    <Property Name="Apie" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Leidykla" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="MiestasId" Type="Int32" />
+    <NavigationProperty Name="Miestai" Relationship="Self.FK__Zurnalai__Miesta__208CD6FA" FromRole="Zurnalai" ToRole="Miestai" />
+    <NavigationProperty Name="UzsakymaiZurnalais" Relationship="Self.FK__Uzsakymai__Zurna__236943A5" FromRole="Zurnalai" ToRole="UzsakymaiZurnalai" />
+  </EntityType>
+  <Association Name="FK__AudioKnyg__Igars__03F0984C">
+    <End Role="Igarsintojai" Type="Self.Igarsintojai" Multiplicity="0..1" />
+    <End Role="AudioKnygos" Type="Self.AudioKnygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Igarsintojai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AudioKnygos">
+        <PropertyRef Name="IgarsintojasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Audio__2739D489">
+    <End Role="AudioKnygos" Type="Self.AudioKnygo" Multiplicity="0..1" />
+    <End Role="UzsakymaiAudioKnygos" Type="Self.UzsakymaiAudioKnygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AudioKnygos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiAudioKnygos">
+        <PropertyRef Name="AudioKnygaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Knygos__Autorius__7E37BEF6">
+    <End Role="Autoriai" Type="Self.Autoriai" Multiplicity="0..1" />
+    <End Role="Knygos" Type="Self.Knygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autoriai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Knygos">
+        <PropertyRef Name="AutoriusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bibliotek__Miest__71D1E811">
+    <End Role="Miestai" Type="Self.Miestai" Multiplicity="0..1" />
+    <End Role="Bibliotekos" Type="Self.Biblioteko" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Miestai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bibliotekos">
+        <PropertyRef Name="MiestasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Bibli__797309D9">
+    <End Role="Bibliotekos" Type="Self.Biblioteko" Multiplicity="0..1" />
+    <End Role="Uzsakymai" Type="Self.Uzsakymai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bibliotekos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Uzsakymai">
+        <PropertyRef Name="BibliotekaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skaitytojai_Bibliotekos">
+    <End Role="Bibliotekos" Type="Self.Biblioteko" Multiplicity="0..1" />
+    <End Role="Skaitytojai" Type="Self.Skaitytojai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bibliotekos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Skaitytojai">
+        <PropertyRef Name="BibliotekaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Knygos__KalbaId__7C4F7684">
+    <End Role="Kalbos" Type="Self.Kalbo" Multiplicity="0..1" />
+    <End Role="Knygos" Type="Self.Knygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kalbos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Knygos">
+        <PropertyRef Name="KalbaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Knygos__ZanrasId__7D439ABD">
+    <End Role="Zanrai" Type="Self.Zanrai" Multiplicity="0..1" />
+    <End Role="Knygos" Type="Self.Knygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zanrai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Knygos">
+        <PropertyRef Name="ZanrasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Knyga__160F4887">
+    <End Role="Knygos" Type="Self.Knygo" Multiplicity="0..1" />
+    <End Role="UzsakymaiKnygos" Type="Self.UzsakymaiKnygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knygos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiKnygos">
+        <PropertyRef Name="KnygaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zurnalai__Miesta__208CD6FA">
+    <End Role="Miestai" Type="Self.Miestai" Multiplicity="0..1" />
+    <End Role="Zurnalai" Type="Self.Zurnalai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Miestai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Zurnalai">
+        <PropertyRef Name="MiestasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Skaitytoj__Tipas__75A278F5">
+    <End Role="Tipai" Type="Self.Tipai" Multiplicity="0..1" />
+    <End Role="Skaitytojai" Type="Self.Skaitytojai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Skaitytojai">
+        <PropertyRef Name="TipasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Skait__787EE5A0">
+    <End Role="Skaitytojai" Type="Self.Skaitytojai" Multiplicity="0..1" />
+    <End Role="Uzsakymai" Type="Self.Uzsakymai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skaitytojai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Uzsakymai">
+        <PropertyRef Name="SkaitytojasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Uzsak__17036CC0">
+    <End Role="Uzsakymai" Type="Self.Uzsakymai" Multiplicity="0..1" />
+    <End Role="UzsakymaiKnygos" Type="Self.UzsakymaiKnygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uzsakymai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiKnygos">
+        <PropertyRef Name="UzsakymasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Uzsak__245D67DE">
+    <End Role="Uzsakymai" Type="Self.Uzsakymai" Multiplicity="0..1" />
+    <End Role="UzsakymaiZurnalai" Type="Self.UzsakymaiZurnalai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uzsakymai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiZurnalai">
+        <PropertyRef Name="UzsakymasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Uzsak__282DF8C2">
+    <End Role="Uzsakymai" Type="Self.Uzsakymai" Multiplicity="0..1" />
+    <End Role="UzsakymaiAudioKnygos" Type="Self.UzsakymaiAudioKnygo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uzsakymai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiAudioKnygos">
+        <PropertyRef Name="UzsakymasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uzsakymai__Zurna__236943A5">
+    <End Role="Zurnalai" Type="Self.Zurnalai" Multiplicity="0..1" />
+    <End Role="UzsakymaiZurnalai" Type="Self.UzsakymaiZurnalai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zurnalai">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UzsakymaiZurnalai">
+        <PropertyRef Name="ZurnalasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Project_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AudioKnygos" EntityType="Self.AudioKnygo" />
+    <EntitySet Name="Autoriais" EntityType="Self.Autoriai" />
+    <EntitySet Name="Bibliotekos" EntityType="Self.Biblioteko" />
+    <EntitySet Name="Igarsintojais" EntityType="Self.Igarsintojai" />
+    <EntitySet Name="Kalbos" EntityType="Self.Kalbo" />
+    <EntitySet Name="Knygos" EntityType="Self.Knygo" />
+    <EntitySet Name="Miestais" EntityType="Self.Miestai" />
+    <EntitySet Name="Skaitytojais" EntityType="Self.Skaitytojai" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tipais" EntityType="Self.Tipai" />
+    <EntitySet Name="Uzsakymais" EntityType="Self.Uzsakymai" />
+    <EntitySet Name="UzsakymaiAudioKnygos" EntityType="Self.UzsakymaiAudioKnygo" />
+    <EntitySet Name="UzsakymaiKnygos" EntityType="Self.UzsakymaiKnygo" />
+    <EntitySet Name="UzsakymaiZurnalais" EntityType="Self.UzsakymaiZurnalai" />
+    <EntitySet Name="Zanrais" EntityType="Self.Zanrai" />
+    <EntitySet Name="Zurnalais" EntityType="Self.Zurnalai" />
+    <AssociationSet Name="FK__AudioKnyg__Igars__03F0984C" Association="Self.FK__AudioKnyg__Igars__03F0984C">
+      <End Role="Igarsintojai" EntitySet="Igarsintojais" />
+      <End Role="AudioKnygos" EntitySet="AudioKnygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Audio__2739D489" Association="Self.FK__Uzsakymai__Audio__2739D489">
+      <End Role="AudioKnygos" EntitySet="AudioKnygos" />
+      <End Role="UzsakymaiAudioKnygos" EntitySet="UzsakymaiAudioKnygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Knygos__Autorius__7E37BEF6" Association="Self.FK__Knygos__Autorius__7E37BEF6">
+      <End Role="Autoriai" EntitySet="Autoriais" />
+      <End Role="Knygos" EntitySet="Knygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bibliotek__Miest__71D1E811" Association="Self.FK__Bibliotek__Miest__71D1E811">
+      <End Role="Miestai" EntitySet="Miestais" />
+      <End Role="Bibliotekos" EntitySet="Bibliotekos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Bibli__797309D9" Association="Self.FK__Uzsakymai__Bibli__797309D9">
+      <End Role="Bibliotekos" EntitySet="Bibliotekos" />
+      <End Role="Uzsakymai" EntitySet="Uzsakymais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skaitytojai_Bibliotekos" Association="Self.FK_Skaitytojai_Bibliotekos">
+      <End Role="Bibliotekos" EntitySet="Bibliotekos" />
+      <End Role="Skaitytojai" EntitySet="Skaitytojais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Knygos__KalbaId__7C4F7684" Association="Self.FK__Knygos__KalbaId__7C4F7684">
+      <End Role="Kalbos" EntitySet="Kalbos" />
+      <End Role="Knygos" EntitySet="Knygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Knygos__ZanrasId__7D439ABD" Association="Self.FK__Knygos__ZanrasId__7D439ABD">
+      <End Role="Zanrai" EntitySet="Zanrais" />
+      <End Role="Knygos" EntitySet="Knygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Knyga__160F4887" Association="Self.FK__Uzsakymai__Knyga__160F4887">
+      <End Role="Knygos" EntitySet="Knygos" />
+      <End Role="UzsakymaiKnygos" EntitySet="UzsakymaiKnygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zurnalai__Miesta__208CD6FA" Association="Self.FK__Zurnalai__Miesta__208CD6FA">
+      <End Role="Miestai" EntitySet="Miestais" />
+      <End Role="Zurnalai" EntitySet="Zurnalais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Skaitytoj__Tipas__75A278F5" Association="Self.FK__Skaitytoj__Tipas__75A278F5">
+      <End Role="Tipai" EntitySet="Tipais" />
+      <End Role="Skaitytojai" EntitySet="Skaitytojais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Skait__787EE5A0" Association="Self.FK__Uzsakymai__Skait__787EE5A0">
+      <End Role="Skaitytojai" EntitySet="Skaitytojais" />
+      <End Role="Uzsakymai" EntitySet="Uzsakymais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Uzsak__17036CC0" Association="Self.FK__Uzsakymai__Uzsak__17036CC0">
+      <End Role="Uzsakymai" EntitySet="Uzsakymais" />
+      <End Role="UzsakymaiKnygos" EntitySet="UzsakymaiKnygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Uzsak__245D67DE" Association="Self.FK__Uzsakymai__Uzsak__245D67DE">
+      <End Role="Uzsakymai" EntitySet="Uzsakymais" />
+      <End Role="UzsakymaiZurnalai" EntitySet="UzsakymaiZurnalais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Uzsak__282DF8C2" Association="Self.FK__Uzsakymai__Uzsak__282DF8C2">
+      <End Role="Uzsakymai" EntitySet="Uzsakymais" />
+      <End Role="UzsakymaiAudioKnygos" EntitySet="UzsakymaiAudioKnygos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uzsakymai__Zurna__236943A5" Association="Self.FK__Uzsakymai__Zurna__236943A5">
+      <End Role="Zurnalai" EntitySet="Zurnalais" />
+      <End Role="UzsakymaiZurnalai" EntitySet="UzsakymaiZurnalais" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

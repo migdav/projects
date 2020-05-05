@@ -1,0 +1,79 @@
+﻿@model WebApplication3.Models.Knygo
+
+@{
+    ViewBag.Title = "Pašalinti";
+}
+
+<h2>Pašalinimas</h2>
+
+<h3>Ar norite ištrinti šią knygą?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pav)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pav)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Leidykla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Leidykla)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Leidimo metai</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autoriai.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autoriai.Vardas)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autoriai.Pavarde)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Kalba</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kalbo.Pav)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Žanras</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zanrai.Pav)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+        <input type="submit" value="Pašalinti" class="btn btn-info" />
+    </div>
+    }
+</div>

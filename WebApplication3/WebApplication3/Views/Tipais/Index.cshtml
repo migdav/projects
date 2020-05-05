@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication3.Models.Tipai>
+
+@{
+    ViewBag.Title = "Tipai";
+}
+
+<h2>Tipai</h2>
+
+<p align="right">
+    @Html.ActionLink("Naujas tipas", "Create", null, new { @class = "btn btn-primary action" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label for="SomekingStatus" class="control-label">Skaitytojo tipas</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pav)
+        </td>
+        <td>
+            @Html.ActionLink("Redaguoti", "Edit", new { id = item.Id }, new { @class = "btn btn-warning action" })
+            @Html.ActionLink("Pašalinti", "Delete", new { id = item.Id }, new { @class = "btn btn-danger action" })
+        </td>
+    </tr>
+}
+
+</table>

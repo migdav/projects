@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Project_DBModelStoreContainer" CdmEntityContainer="Project_DBEntities">
+    <EntitySetMapping Name="AudioKnygos">
+      <EntityTypeMapping TypeName="Project_DBModel.AudioKnygo">
+        <MappingFragment StoreEntitySet="AudioKnygos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+          <ScalarProperty Name="Trukme" ColumnName="Trukme" />
+          <ScalarProperty Name="Skirsnis" ColumnName="Skirsnis" />
+          <ScalarProperty Name="Metai" ColumnName="Metai" />
+          <ScalarProperty Name="IgarsintojasId" ColumnName="IgarsintojasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autoriais">
+      <EntityTypeMapping TypeName="Project_DBModel.Autoriai">
+        <MappingFragment StoreEntitySet="Autoriai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bibliotekos">
+      <EntityTypeMapping TypeName="Project_DBModel.Biblioteko">
+        <MappingFragment StoreEntitySet="Bibliotekos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+          <ScalarProperty Name="MiestasId" ColumnName="MiestasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Igarsintojais">
+      <EntityTypeMapping TypeName="Project_DBModel.Igarsintojai">
+        <MappingFragment StoreEntitySet="Igarsintojai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kalbos">
+      <EntityTypeMapping TypeName="Project_DBModel.Kalbo">
+        <MappingFragment StoreEntitySet="Kalbos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knygos">
+      <EntityTypeMapping TypeName="Project_DBModel.Knygo">
+        <MappingFragment StoreEntitySet="Knygos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+          <ScalarProperty Name="Leidykla" ColumnName="Leidykla" />
+          <ScalarProperty Name="Metai" ColumnName="Metai" />
+          <ScalarProperty Name="KalbaId" ColumnName="KalbaId" />
+          <ScalarProperty Name="ZanrasId" ColumnName="ZanrasId" />
+          <ScalarProperty Name="AutoriusId" ColumnName="AutoriusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Miestais">
+      <EntityTypeMapping TypeName="Project_DBModel.Miestai">
+        <MappingFragment StoreEntitySet="Miestai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skaitytojais">
+      <EntityTypeMapping TypeName="Project_DBModel.Skaitytojai">
+        <MappingFragment StoreEntitySet="Skaitytojai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="kodas" ColumnName="kodas" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Gimimo_metai" ColumnName="Gimimo_metai" />
+          <ScalarProperty Name="TelefonoNr" ColumnName="TelefonoNr" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TipasId" ColumnName="TipasId" />
+          <ScalarProperty Name="BibliotekaId" ColumnName="BibliotekaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Project_DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipais">
+      <EntityTypeMapping TypeName="Project_DBModel.Tipai">
+        <MappingFragment StoreEntitySet="Tipai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uzsakymais">
+      <EntityTypeMapping TypeName="Project_DBModel.Uzsakymai">
+        <MappingFragment StoreEntitySet="Uzsakymai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Uzsakymo_Data" ColumnName="Uzsakymo_Data" />
+          <ScalarProperty Name="Grazinimo_Data" ColumnName="Grazinimo_Data" />
+          <ScalarProperty Name="SkaitytojasId" ColumnName="SkaitytojasId" />
+          <ScalarProperty Name="BibliotekaId" ColumnName="BibliotekaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UzsakymaiAudioKnygos">
+      <EntityTypeMapping TypeName="Project_DBModel.UzsakymaiAudioKnygo">
+        <MappingFragment StoreEntitySet="UzsakymaiAudioKnygos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AudioKnygaId" ColumnName="AudioKnygaId" />
+          <ScalarProperty Name="UzsakymasId" ColumnName="UzsakymasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UzsakymaiKnygos">
+      <EntityTypeMapping TypeName="Project_DBModel.UzsakymaiKnygo">
+        <MappingFragment StoreEntitySet="UzsakymaiKnygos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KnygaId" ColumnName="KnygaId" />
+          <ScalarProperty Name="UzsakymasId" ColumnName="UzsakymasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UzsakymaiZurnalais">
+      <EntityTypeMapping TypeName="Project_DBModel.UzsakymaiZurnalai">
+        <MappingFragment StoreEntitySet="UzsakymaiZurnalai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ZurnalasId" ColumnName="ZurnalasId" />
+          <ScalarProperty Name="UzsakymasId" ColumnName="UzsakymasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zanrais">
+      <EntityTypeMapping TypeName="Project_DBModel.Zanrai">
+        <MappingFragment StoreEntitySet="Zanrai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zurnalais">
+      <EntityTypeMapping TypeName="Project_DBModel.Zurnalai">
+        <MappingFragment StoreEntitySet="Zurnalai">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pav" ColumnName="Pav" />
+          <ScalarProperty Name="Nr" ColumnName="Nr" />
+          <ScalarProperty Name="Metai" ColumnName="Metai" />
+          <ScalarProperty Name="Apie" ColumnName="Apie" />
+          <ScalarProperty Name="Leidykla" ColumnName="Leidykla" />
+          <ScalarProperty Name="MiestasId" ColumnName="MiestasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

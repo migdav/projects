@@ -1,0 +1,72 @@
+﻿@model WebApplication3.Models.Knygo
+
+@{
+    ViewBag.Title = "Info";
+}
+
+<h2>Informacija</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label for="SomekingStatus" class="control-label">Pavadinimas</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pav)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Leidykla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Leidykla)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Leidimo metai</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autoriai.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autoriai.Vardas)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autoriai.Pavarde)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Kalba</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kalbo.Pav)
+        </dd>
+
+        <dt>
+            <label for="SomekingStatus" class="control-label">Žanras</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zanrai.Pav)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+</p>

@@ -1,0 +1,82 @@
+﻿@model WebApplication3.Models.Skaitytojai
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Skaitytojai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kodas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kodas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gimimo_metai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gimimo_metai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Biblioteko.Pav)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Biblioteko.Pav)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipai.Pav)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipai.Pav)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebApplication3.Models.Skaitytojai>
+
+@{
+    ViewBag.Title = "Skaitytojai";
+}
+
+</br>
+<p align="right">
+    @Html.ActionLink("Tipai", "../Tipais/Index", null, new { @class = "btn btn-success action" })
+</p>
+<hr />
+
+<h2>Skaitytojai</h2>
+
+<p align="right">
+    @Html.ActionLink("Naujas skaitytojas", "Create", null, new { @class = "btn btn-primary action" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            <label for="SomekingStatus" class="control-label">Kodas</label>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Gimimo data</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Tel.Nr</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">El. paštas</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Biblioteka</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Tipas</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kodas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vardas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pavarde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gimimo_metai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Biblioteko.Pav)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipai.Pav)
+            </td>
+            <td>
+                @Html.ActionLink("Redaguoti", "Edit", new { id = item.Id }, new { @class = "btn btn-warning action" })
+                @Html.ActionLink("Pašalinti", "Delete", new { id = item.Id }, new { @class = "btn btn-danger action" })
+            </td>
+        </tr>
+    }
+
+</table>

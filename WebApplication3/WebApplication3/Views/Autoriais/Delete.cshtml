@@ -1,0 +1,40 @@
+﻿@model WebApplication3.Models.Autoriai
+
+@{
+    ViewBag.Title = "Pašalinti";
+}
+
+<h2>Pašalinimas</h2>
+
+<h3>Ar norite ištrinti šį autorių?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Pavarde)-->
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+        </br>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+        <input type="submit" value="Pašalinti" class="btn btn-info" />
+    </div>
+    }
+</div>

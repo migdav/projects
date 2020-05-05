@@ -1,0 +1,32 @@
+﻿@model WebApplication3.Models.Kalbo
+
+@{
+    ViewBag.Title = "Pašalinti";
+}
+
+<h2>Pašalinimas</h2>
+
+<h3>Ar norite ištrinti šią kalbą?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Pav)-->
+            <label for="SomekingStatus" class="control-label">Kalbos pavadinimas</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pav)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+        <input type="submit" value="Pašalinti" class="btn btn-info" />
+    </div>
+    }
+</div>

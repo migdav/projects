@@ -1,0 +1,87 @@
+﻿@model WebApplication3.Models.AutoriaiDouble
+
+@{
+    ViewBag.Title = "Naujas autorius";
+}
+
+<h2>Naujas autorius</h2>
+
+<script>
+    function myFunction(a, b) {
+        var element = document.getElementById(a);
+        var element2 = document.getElementById(b);
+        element.value = '';
+        element2.value = '';
+    }
+
+</script>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Įveskite duomenis</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <table style="width:50%" class="col-md-10">
+        <tr>
+            <th>@Html.LabelFor(model => model.Vardas1, "Vardas", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+            <th>@Html.LabelFor(model => model.Pavarde1, "Pavardė", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+        </tr>
+        <tr height="50" style="vertical-align:top">
+            <td>
+                @Html.EditorFor(model => model.Vardas1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Vardas1, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Pavarde1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pavarde1, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <button onclick="myFunction('Vardas1','Pavarde1')" class="btn btn-danger">Pašalinti</button>
+            </td>
+        </tr>
+        <tr height="50"  style="vertical-align:top">
+            <td>
+                @Html.EditorFor(model => model.Vardas2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Vardas2, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Pavarde2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pavarde2, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <button onclick="myFunction('Vardas2','Pavarde2')" class="btn btn-danger">Pašalinti</button>
+            </td>
+        </tr>
+
+        </table>
+
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @if (ViewBag.msg != null)
+                {
+                    <h5 style="color:green; margin-left: 21em;"><i><b>@ViewBag.msg</b></i></h5>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" align="left">
+                <input type="submit" value="Pridėti autorius" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+    }
+        <div>
+
+            @Html.ActionLink("Grįžti į sąrašą", "Index", null, new { @class = "btn btn-default action" })
+        </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

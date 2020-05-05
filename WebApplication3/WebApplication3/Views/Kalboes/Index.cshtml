@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication3.Models.Kalbo>
+
+@{
+    ViewBag.Title = "Kalbos";
+}
+
+<h2>Kalbos</h2>
+
+<p align="right">
+    @Html.ActionLink("Nauja kalba", "Create", null, new { @class = "btn btn-primary action" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Pav)-->
+            <label for="SomekingStatus" class="control-label">Kalbos pavadinimas</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pav)
+        </td>
+        <td>
+            @Html.ActionLink("Info", "Details", new { id = item.Id }, new { @class = "btn btn-default action" })
+            @Html.ActionLink("Redaguoti", "Edit", new { id = item.Id }, new { @class = "btn btn-warning action" })
+            @Html.ActionLink("Pašalinti", "Delete", new { id = item.Id },new { @class = "btn btn-danger action" })
+        </td>
+    </tr>
+}
+
+</table>

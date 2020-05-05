@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication3.Models.Knygo>
+
+@{
+    ViewBag.Title = "Knygos";
+}
+</br>
+<p align="right">
+    @Html.ActionLink("Autoriai", "../Autoriais/Index", null, new { @class = "btn btn-success action" })
+    @Html.ActionLink("Kalbos", "../Kalboes/Index", null, new { @class = "btn btn-success action" })
+    @Html.ActionLink("Žanrai", "../Zanrais/Index", null, new { @class = "btn btn-success action" })
+</p>
+<hr />
+
+<h2>Knygos</h2>
+
+<p align="right">
+    @Html.ActionLink("Dvi naujos knygos", "CreateDouble", null, new { @class = "btn btn-primary action" })
+    @Html.ActionLink("Nauja knyga", "Create", null, new { @class = "btn btn-primary action" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Pav)-->
+            <label for="SomekingStatus" class="control-label">Pavadinimas</label>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leidykla)
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Metai)-->
+            <label for="SomekingStatus" class="control-label">Leidimo metai</label>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autoriai.Vardas)
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Autoriai.Pavarde)-->
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Kalbo.Pav)-->
+            <label for="SomekingStatus" class="control-label">Kalba</label>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Zanrai.Pav)-->
+            <label for="SomekingStatus" class="control-label">Žanras</label>
+        </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pav)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Leidykla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autoriai.Vardas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autoriai.Pavarde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kalbo.Pav)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zanrai.Pav)
+        </td>
+        <td>
+            @Html.ActionLink("Info", "Details", new { id = item.Id }, new { @class = "btn btn-default action" })
+            @Html.ActionLink("Redaguoti", "Edit", new { id = item.Id }, new { @class = "btn btn-warning action" })
+            @Html.ActionLink("Pašalinti", "Delete", new { id = item.Id }, new { @class = "btn btn-danger action" })
+        </td>
+    </tr>
+        }
+
+    </table>
