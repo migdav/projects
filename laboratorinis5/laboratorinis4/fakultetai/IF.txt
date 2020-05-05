@@ -1,0 +1,9 @@
+Informatikos fakultetas
+Kompiuterine grafika;Halley;Desiderio;IF-8/1;
+Informacines technologijos;Dwana;Tobey;IFF-8/15;
+Informacines technologijos EN;Imelda;Esters;MG-8/1;
+OP 1;Junko;Kilcrease;IFF-8/15;
+Matematika 1;Shonna;Franzoni;IF-8/5;
+Fizika 2;Clint;Hipps;IFF-8/6;
+Kompiuterine grafika;Prince;Medlin;IF-8/1;
+Nano medziagu modeliavimas;September;Crudup;IF-8/1;

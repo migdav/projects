@@ -1,0 +1,13 @@
+﻿Matematikos ir gamtos mokslu fakultetas
+Fizika 3;Benjamin;Shiba;MGTT-8/3;
+Matematine analize;Alverta;Pagani;MGTT-8/4;
+Algebra;Lavonna;Yates;MGTT-8/3;
+Fizika 1;Louie;Lovings;MGTT-8/3;
+Matematika 1;Matilde;Yau;MGTRF-8/14;
+OP 2;Lorraine;Murff;MGTRF-8/14;
+Algebra RU;Arturo;Wetherbee;MGTT-8/3;
+Matematine analize;Flor;Madore;MGTRF-8/12;
+Fizika 3;Adela;Akers;MGTT-8/3;
+Algebra 3;Bertie;Villalta;MGTT-8/3;
+OP 1;Veronique;Greenidge;MGTRF-8/12;
+Fizika 3;Rusty;Policastro;MGTRF-8/12;

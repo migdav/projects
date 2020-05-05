@@ -1,0 +1,14 @@
+Nano medziagu modeliavimas;Stasiulaitis;Stasys;6;
+Kompiuterine grafika;Lenkevius;Antanas;6;
+Fizika 2;Puodelynas;Linas;9;
+Matematika 1;Ikmantas;Tomas;9;
+OP 1;Kriponas;Andrius;9;
+Informacines technologijos EN;Kepulis;Jonas;6;
+Informacines technologijos;Kepulis;Jonas;6;
+Fizika 3;Puodelynas;Linas;6;
+Algebra 3;Rimka;Ineta;9;
+Matematine analize;Rimka;Ineta;3;
+Algebra RU;Rimka;Ineta;6;
+OP 2;Kriponas;Andrius;6;
+Fizika 1;Puodelynas;Linas;9;
+Algebra;Rimka;Ineta;6;
