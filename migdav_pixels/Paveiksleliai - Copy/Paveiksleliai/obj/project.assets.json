@@ -792,11 +792,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Migle\\Documents\\Downloads\\migdav_Lab1_IF_8_1\\Paveiksleliai - Copy\\Paveiksleliai\\Paveiksleliai_24bit.csproj",
+      "projectUniqueName": "C:\\WWWmigle\\STUDIES\\IVsemestras\\Algoritmai\\pixelsSorting\\migdav_pixels\\Paveiksleliai - Copy\\Paveiksleliai\\Paveiksleliai_24bit.csproj",
       "projectName": "Paveiksleliai_24bit",
-      "projectPath": "C:\\Users\\Migle\\Documents\\Downloads\\migdav_Lab1_IF_8_1\\Paveiksleliai - Copy\\Paveiksleliai\\Paveiksleliai_24bit.csproj",
+      "projectPath": "C:\\WWWmigle\\STUDIES\\IVsemestras\\Algoritmai\\pixelsSorting\\migdav_pixels\\Paveiksleliai - Copy\\Paveiksleliai\\Paveiksleliai_24bit.csproj",
       "packagesPath": "C:\\Users\\Migle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Migle\\Documents\\Downloads\\migdav_Lab1_IF_8_1\\Paveiksleliai - Copy\\Paveiksleliai\\obj\\",
+      "outputPath": "C:\\WWWmigle\\STUDIES\\IVsemestras\\Algoritmai\\pixelsSorting\\migdav_pixels\\Paveiksleliai - Copy\\Paveiksleliai\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
