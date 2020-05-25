@@ -11,8 +11,7 @@ namespace WebApplication3.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Skaitytojai
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,7 +24,6 @@ namespace WebApplication3.Models
         public int kodas { get; set; }
         public string Vardas { get; set; }
         public string Pavarde { get; set; }
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Gimimo_metai { get; set; }
         public int TelefonoNr { get; set; }
         public string Email { get; set; }

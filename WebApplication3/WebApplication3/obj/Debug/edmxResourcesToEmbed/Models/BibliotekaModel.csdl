@@ -450,5 +450,61 @@
       <End Role="Zurnalai" EntitySet="Zurnalais" />
       <End Role="UzsakymaiZurnalai" EntitySet="UzsakymaiZurnalais" />
     </AssociationSet>
+    <FunctionImport Name="Simple" ReturnType="Collection(Project_DBModel.Simple_Result)">
+      <Parameter Name="nuo" Mode="In" Type="Int32" />
+      <Parameter Name="iki" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="function_simple" EntitySet="Uzsakymais" ReturnType="Collection(Project_DBModel.Uzsakymai)">
+      <Parameter Name="nuo" Mode="In" Type="Int32" />
+      <Parameter Name="iki" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ShowReaders" ReturnType="Collection(Project_DBModel.ShowReaders_Result)">
+      <Parameter Name="nuo" Mode="In" Type="DateTime" />
+      <Parameter Name="iki" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="function_showreaders" ReturnType="Collection(Project_DBModel.ShowReaders_Result)">
+      <Parameter Name="nuo" Mode="In" Type="DateTime" />
+      <Parameter Name="iki" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="Ataskaitas" EntityType="Project_DBModel.Ataskaita" />
   </EntityContainer>
+  <ComplexType Name="Simple_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Uzsakymo_Data" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="Grazinimo_Data" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="SkaitytojasId" Nullable="true" />
+    <Property Type="Int32" Name="BibliotekaId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ShowReaders_Result">
+    <Property Type="String" Name="Pavarde" Nullable="true" MaxLength="512" />
+    <Property Type="String" Name="Vardas" Nullable="true" MaxLength="512" />
+    <Property Type="String" Name="paimta" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="grazinti" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="knygu_suma" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="knygu_count" Nullable="true" />
+    <Property Type="String" Name="zurnalu_suma" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="zurnalu_count" Nullable="true" />
+    <Property Type="String" Name="audio_suma" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="audio_count" Nullable="true" />
+    <Property Type="Int32" Name="leidiniai" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Ataskaita">
+    <Key>
+      <PropertyRef Name="SkaitytojoId" />
+      <PropertyRef Name="UzsakymoId" />
+    </Key>
+    <Property Name="SkaitytojoId" Type="Int32" Nullable="false" />
+    <Property Name="UzsakymoId" Type="Int32" Nullable="false" />
+    <Property Name="Pavarde" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Vardas" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="paimta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="grazinti" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="knygu_suma" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="knygu_count" Type="Int32" />
+    <Property Name="zurnalu_suma" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="zurnalu_count" Type="Int32" />
+    <Property Name="audio_suma" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="audio_count" Type="Int32" />
+    <Property Name="leidiniai" Type="Int32" />
+  </EntityType>
 </Schema>

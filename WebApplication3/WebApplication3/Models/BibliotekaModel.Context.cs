@@ -12,6 +12,8 @@ namespace WebApplication3.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Project_DBEntities : DbContext
     {
@@ -41,5 +43,71 @@ namespace WebApplication3.Models
         public virtual DbSet<UzsakymaiZurnalai> UzsakymaiZurnalais { get; set; }
         public virtual DbSet<Zanrai> Zanrais { get; set; }
         public virtual DbSet<Zurnalai> Zurnalais { get; set; }
+        public virtual DbSet<Ataskaita> Ataskaitas { get; set; }
+    
+        public virtual ObjectResult<Simple_Result> Simple(Nullable<int> nuo, Nullable<int> iki)
+        {
+            var nuoParameter = nuo.HasValue ?
+                new ObjectParameter("nuo", nuo) :
+                new ObjectParameter("nuo", typeof(int));
+    
+            var ikiParameter = iki.HasValue ?
+                new ObjectParameter("iki", iki) :
+                new ObjectParameter("iki", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Simple_Result>("Simple", nuoParameter, ikiParameter);
+        }
+    
+        public virtual ObjectResult<Uzsakymai> function_simple(Nullable<int> nuo, Nullable<int> iki)
+        {
+            var nuoParameter = nuo.HasValue ?
+                new ObjectParameter("nuo", nuo) :
+                new ObjectParameter("nuo", typeof(int));
+    
+            var ikiParameter = iki.HasValue ?
+                new ObjectParameter("iki", iki) :
+                new ObjectParameter("iki", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Uzsakymai>("function_simple", nuoParameter, ikiParameter);
+        }
+    
+        public virtual ObjectResult<Uzsakymai> function_simple(Nullable<int> nuo, Nullable<int> iki, MergeOption mergeOption)
+        {
+            var nuoParameter = nuo.HasValue ?
+                new ObjectParameter("nuo", nuo) :
+                new ObjectParameter("nuo", typeof(int));
+    
+            var ikiParameter = iki.HasValue ?
+                new ObjectParameter("iki", iki) :
+                new ObjectParameter("iki", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Uzsakymai>("function_simple", mergeOption, nuoParameter, ikiParameter);
+        }
+    
+        public virtual ObjectResult<ShowReaders_Result> ShowReaders(Nullable<System.DateTime> nuo, Nullable<System.DateTime> iki)
+        {
+            var nuoParameter = nuo.HasValue ?
+                new ObjectParameter("nuo", nuo) :
+                new ObjectParameter("nuo", typeof(System.DateTime));
+    
+            var ikiParameter = iki.HasValue ?
+                new ObjectParameter("iki", iki) :
+                new ObjectParameter("iki", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ShowReaders_Result>("ShowReaders", nuoParameter, ikiParameter);
+        }
+    
+        public virtual ObjectResult<ShowReaders_Result> function_showreaders(Nullable<System.DateTime> nuo, Nullable<System.DateTime> iki)
+        {
+            var nuoParameter = nuo.HasValue ?
+                new ObjectParameter("nuo", nuo) :
+                new ObjectParameter("nuo", typeof(System.DateTime));
+    
+            var ikiParameter = iki.HasValue ?
+                new ObjectParameter("iki", iki) :
+                new ObjectParameter("iki", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ShowReaders_Result>("function_showreaders", nuoParameter, ikiParameter);
+        }
     }
 }

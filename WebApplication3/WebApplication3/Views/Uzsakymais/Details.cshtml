@@ -1,0 +1,50 @@
+﻿@model WebApplication3.Models.Uzsakymai
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Uzsakymai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Uzsakymo_Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uzsakymo_Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grazinimo_Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grazinimo_Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Biblioteko.Pav)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Biblioteko.Pav)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skaitytojai.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skaitytojai.Vardas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

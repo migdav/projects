@@ -1,0 +1,127 @@
+﻿@model IEnumerable<WebApplication3.Models.Ataskaita>
+<br />
+<h2>Ataskaita</h2>
+
+<div class="form-group">
+
+    <div class="col-md-10">
+        @if (ViewBag.msg != null)
+        {
+            <h5 style="color:green; margin-left: 21em;"><i><b>@ViewBag.msg</b></i></h5>
+        }
+    </div>
+</div>
+<table class="table">
+    <tr style="background-color:#ffffcc">
+        <th>
+            <label for="SomekingStatus" class="control-label">Užsakymo Nr.</label>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Pavarde)-->
+            <label for="SomekingStatus" class="control-label">Pavardė</label>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.paimta)-->
+            <label for="SomekingStatus" class="control-label">NUO</label>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.grazinti)-->
+            <label for="SomekingStatus" class="control-label">IKI</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Knygos</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Knygų kiekis</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Žurnalai</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Žurnalų kiekis</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Audio knygos</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Audio knygų kiekis</label>
+        </th>
+        <th>
+            <label for="SomekingStatus" class="control-label">Visų leidinių kiekis</label>
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UzsakymoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pavarde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vardas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paimta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grazinti)
+            </td>
+            <td>
+                @if (String.IsNullOrEmpty(item.knygu_suma))
+                {
+                    <h5>(nėra)</h5>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.knygu_suma)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.knygu_count)
+            </td>
+            <td>
+                @if (String.IsNullOrEmpty(item.zurnalu_suma))
+                {
+                    <h5>(nėra)</h5>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.zurnalu_suma)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zurnalu_count)
+            </td>
+            <td>
+                @if (String.IsNullOrEmpty(item.audio_suma))
+                {
+                   <h5>(nėra)</h5>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.audio_suma)
+                }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.audio_count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leidiniai)
+            </td>
+        </tr>
+
+    }
+
+
+</table>
+<h3 align="right">Visų skaitytojų paimti leidiniai: <b style="color:red">@Model.Sum(Model => Model.leidiniai)</b></h3>
+<div>
+    @Html.ActionLink("Kurti naują ataskaitą", "Edit", null, new { @class = "btn btn-default action" })
+</div>

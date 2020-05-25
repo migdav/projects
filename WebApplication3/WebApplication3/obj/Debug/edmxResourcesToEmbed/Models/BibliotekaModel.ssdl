@@ -145,6 +145,27 @@
     <Property Name="Leidykla" Type="nvarchar" MaxLength="512" />
     <Property Name="MiestasId" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Project_DB.dbo.Ataskaita' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Ataskaita">
+    <Key>
+      <PropertyRef Name="SkaitytojoId" />
+      <PropertyRef Name="UzsakymoId" />
+    </Key>
+    <Property Name="SkaitytojoId" Type="int" Nullable="false" />
+    <Property Name="UzsakymoId" Type="int" Nullable="false" />
+    <Property Name="Pavarde" Type="nvarchar" MaxLength="512" />
+    <Property Name="Vardas" Type="nvarchar" MaxLength="512" />
+    <Property Name="paimta" Type="varchar" MaxLength="10" />
+    <Property Name="grazinti" Type="varchar" MaxLength="10" />
+    <Property Name="knygu_suma" Type="nvarchar" MaxLength="4000" />
+    <Property Name="knygu_count" Type="int" />
+    <Property Name="zurnalu_suma" Type="nvarchar" MaxLength="4000" />
+    <Property Name="zurnalu_count" Type="int" />
+    <Property Name="audio_suma" Type="nvarchar" MaxLength="4000" />
+    <Property Name="audio_count" Type="int" />
+    <Property Name="leidiniai" Type="int" />
+  </EntityType>
   <Association Name="FK__AudioKnyg__Igars__03F0984C">
     <End Role="Igarsintojai" Type="Self.Igarsintojai" Multiplicity="0..1" />
     <End Role="AudioKnygos" Type="Self.AudioKnygos" Multiplicity="*" />
@@ -337,6 +358,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="ShowReaders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nuo" Type="datetime" Mode="In" />
+    <Parameter Name="iki" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Simple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nuo" Type="int" Mode="In" />
+    <Parameter Name="iki" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="Project_DBModelStoreContainer">
     <EntitySet Name="AudioKnygos" EntityType="Self.AudioKnygos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Autoriai" EntityType="Self.Autoriai" Schema="dbo" store:Type="Tables" />
@@ -354,6 +383,23 @@
     <EntitySet Name="UzsakymaiZurnalai" EntityType="Self.UzsakymaiZurnalai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zanrai" EntityType="Self.Zanrai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zurnalai" EntityType="Self.Zurnalai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ataskaita" EntityType="Self.Ataskaita" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ataskaita].[SkaitytojoId] AS [SkaitytojoId], 
+    [Ataskaita].[UzsakymoId] AS [UzsakymoId], 
+    [Ataskaita].[Pavarde] AS [Pavarde], 
+    [Ataskaita].[Vardas] AS [Vardas], 
+    [Ataskaita].[paimta] AS [paimta], 
+    [Ataskaita].[grazinti] AS [grazinti], 
+    [Ataskaita].[knygu_suma] AS [knygu_suma], 
+    [Ataskaita].[knygu_count] AS [knygu_count], 
+    [Ataskaita].[zurnalu_suma] AS [zurnalu_suma], 
+    [Ataskaita].[zurnalu_count] AS [zurnalu_count], 
+    [Ataskaita].[audio_suma] AS [audio_suma], 
+    [Ataskaita].[audio_count] AS [audio_count], 
+    [Ataskaita].[leidiniai] AS [leidiniai]
+    FROM [dbo].[Ataskaita] AS [Ataskaita]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__AudioKnyg__Igars__03F0984C" Association="Self.FK__AudioKnyg__Igars__03F0984C">
       <End Role="Igarsintojai" EntitySet="Igarsintojai" />
       <End Role="AudioKnygos" EntitySet="AudioKnygos" />

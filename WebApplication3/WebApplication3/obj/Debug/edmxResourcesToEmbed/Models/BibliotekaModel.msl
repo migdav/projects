@@ -162,5 +162,70 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Simple" FunctionName="Project_DBModel.Store.Simple">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Project_DBModel.Simple_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Uzsakymo_Data" ColumnName="Uzsakymo_Data" />
+          <ScalarProperty Name="Grazinimo_Data" ColumnName="Grazinimo_Data" />
+          <ScalarProperty Name="SkaitytojasId" ColumnName="SkaitytojasId" />
+          <ScalarProperty Name="BibliotekaId" ColumnName="BibliotekaId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="function_simple" FunctionName="Project_DBModel.Store.Simple" />
+    <FunctionImportMapping FunctionImportName="ShowReaders" FunctionName="Project_DBModel.Store.ShowReaders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Project_DBModel.ShowReaders_Result">
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="paimta" ColumnName="paimta" />
+          <ScalarProperty Name="grazinti" ColumnName="grazinti" />
+          <ScalarProperty Name="knygu_suma" ColumnName="knygu_suma" />
+          <ScalarProperty Name="knygu_count" ColumnName="knygu_count" />
+          <ScalarProperty Name="zurnalu_suma" ColumnName="zurnalu_suma" />
+          <ScalarProperty Name="zurnalu_count" ColumnName="zurnalu_count" />
+          <ScalarProperty Name="audio_suma" ColumnName="audio_suma" />
+          <ScalarProperty Name="audio_count" ColumnName="audio_count" />
+          <ScalarProperty Name="leidiniai" ColumnName="leidiniai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="function_showreaders" FunctionName="Project_DBModel.Store.ShowReaders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Project_DBModel.ShowReaders_Result">
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="paimta" ColumnName="paimta" />
+          <ScalarProperty Name="grazinti" ColumnName="grazinti" />
+          <ScalarProperty Name="knygu_suma" ColumnName="knygu_suma" />
+          <ScalarProperty Name="knygu_count" ColumnName="knygu_count" />
+          <ScalarProperty Name="zurnalu_suma" ColumnName="zurnalu_suma" />
+          <ScalarProperty Name="zurnalu_count" ColumnName="zurnalu_count" />
+          <ScalarProperty Name="audio_suma" ColumnName="audio_suma" />
+          <ScalarProperty Name="audio_count" ColumnName="audio_count" />
+          <ScalarProperty Name="leidiniai" ColumnName="leidiniai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Ataskaitas">
+      <EntityTypeMapping TypeName="Project_DBModel.Ataskaita">
+        <MappingFragment StoreEntitySet="Ataskaita">
+          <ScalarProperty Name="leidiniai" ColumnName="leidiniai" />
+          <ScalarProperty Name="audio_count" ColumnName="audio_count" />
+          <ScalarProperty Name="audio_suma" ColumnName="audio_suma" />
+          <ScalarProperty Name="zurnalu_count" ColumnName="zurnalu_count" />
+          <ScalarProperty Name="zurnalu_suma" ColumnName="zurnalu_suma" />
+          <ScalarProperty Name="knygu_count" ColumnName="knygu_count" />
+          <ScalarProperty Name="knygu_suma" ColumnName="knygu_suma" />
+          <ScalarProperty Name="grazinti" ColumnName="grazinti" />
+          <ScalarProperty Name="paimta" ColumnName="paimta" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="UzsakymoId" ColumnName="UzsakymoId" />
+          <ScalarProperty Name="SkaitytojoId" ColumnName="SkaitytojoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
