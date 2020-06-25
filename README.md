@@ -25,7 +25,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 5. Drag unzipped folder to xampp/htdocs folder<br><br>
 
 6. Open terminal (CMD) and write these commands:<br>
-    5.1 cd <i>yourUnzippedFolderLocation<i><br>
+    5.1 cd <i>yourUnzippedFolderLocation</i><br>
     5.2 composer install<br><br>
     
 7. There are two options to run the application<br>
@@ -33,7 +33,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
         A.1 Write command: php artisan serve<br>
         A.2 Wopy the shown link and paste it in browser. It should loo like this -> http://127.0.0.1:8000<br>
     B Using a browser<br>
-        B.1 Write localhost/<i>FolderNameWhereYourProjectIs<i><br>
-        B.2 Click on the folder and find the folder inside with title <i>public<i> and click it <br><br>
+        B.1 Write localhost/<i>FolderNameWhereYourProjectIs</i><br>
+        B.2 Click on the folder and find the folder inside with title <i>public</i> and click it <br><br>
     
 8. Try it :)<br><br>
