@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="acc" class="col-md-4 col-form-label text-md-right">{{ __('Beneficiary\'s account') }}</label>
+                            <label for="acc" class="col-md-4 col-form-label text-md-right">{{ __('Beneficiary\'s IBAN') }}</label>
 
                             <div class="col-md-6">
                                 <input id="acc" type="text" class="form-control @error('acc') is-invalid @enderror" name="acc" >
