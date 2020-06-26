@@ -25,7 +25,7 @@
                         </th>
                         <th>
                             <h4 style="text-align:center;border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-                            <b> Total: {{ Auth::user()-> total}} EUR<b></h4>
+                            <b> Total: {{ number_format((float) Auth::user()-> total, 2)}} €<b></h4>
                             <h6 style="text-align:right"><b> Your IBAN : {{ Auth::user()-> iban}}<b></h6>
                         </th> 
                     </tr>
@@ -48,7 +48,7 @@
                                         <th>Date</th>
                                         <th>From/To</th>
                                         <th>Description</th>
-                                        <th>Amount</th>
+                                        <th>Amount, €</th>
                                     </tr>
                                 </thread>  
                                 <tbody>

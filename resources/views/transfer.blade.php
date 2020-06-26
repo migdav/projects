@@ -24,8 +24,6 @@
                         @endif
 
 
-
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Beneficiary\'s E-Mail Address') }}</label>
 
@@ -58,14 +56,14 @@
                             <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('AMOUNT, €') }}</label>
                             
                             <div class="col-xs-6 col-sm-3">
-                                <input id="number" type="number" class="form-control @error('number') is-invalid @enderror" name="number" >
+                                <input id="number" type="number" step ="0.01" class="form-control @error('number') is-invalid @enderror" name="number" >
 
                                 @error('number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <label style="font-size:14px;color:red;" >Max available: {{ Auth::user()-> total}} €</label>
+                                <label style="font-size:13px;color:red;" >Max available: {{ number_format((float) Auth::user()-> total, 2)}} €</label>
                             </div>
                             
                         </div>
