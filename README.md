@@ -36,4 +36,4 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
         B.1 Write localhost/<i>FolderNameWhereYourProjectIs</i><br>
         B.2 Click on the folder and find the folder inside with title <i>public</i> and click it <br><br>
     
-8. Try it :)<br><br>
+8. Try it :) If you want to test the application, you can get user data in the file <i>testingUsers.txt</i><br><br>
